@@ -20,6 +20,7 @@
     "nodemon": "^1.19.4"
   },
   "dependencies": {
+    "cross-fetch": "^3.0.4",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "http": "0.0.0",
