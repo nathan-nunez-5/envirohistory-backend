@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/nathan-nunez-5/envirohistory-backend/issues"
   },
-  "homepage": "https://github.com/nathan-nunez-5/envirohistory-backend#readme"
+  "homepage": "https://github.com/nathan-nunez-5/envirohistory-backend#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  },
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "passport": "^0.4.0"
+  }
 }
