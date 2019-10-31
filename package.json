@@ -1,0 +1,19 @@
+{
+  "name": "envirohistory-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathan-nunez-5/envirohistory-backend.git"
+  },
+  "author": "Nathan, Tyler, Aaron, Matty",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nathan-nunez-5/envirohistory-backend/issues"
+  },
+  "homepage": "https://github.com/nathan-nunez-5/envirohistory-backend#readme"
+}
