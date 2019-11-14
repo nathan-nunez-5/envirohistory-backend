@@ -50,6 +50,10 @@ app.get('/', (req, res) => {
   res.render('home');
 });
 
+app.get('/api/home', (req, res) => {
+  res.render('home');
+});
+
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
   console.log(`listening on ${port}`);
