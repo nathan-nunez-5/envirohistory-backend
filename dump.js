@@ -11,10 +11,6 @@ app.use('/api/search', require('./routes/api/search'));
 
 app.get('/', (req, res) => res.send('API Running...'));
 
-app.get('/api/home', (req, res) => {
-  res.render('home');
-});
-
 const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
