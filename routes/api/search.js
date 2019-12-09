@@ -24,17 +24,22 @@ const FEMAParams = {
 router.post('/', async (req, res) => {
   console.log('Submitting Search...');
 
-  searchParams[q] = req.body.q;
+  try {
+    searchParams['q'] = req.body.q;
 
-  let fetchUrl = new URL(GOOGLE_CUSTOM_SEARCH_API_URL);
-  Object.keys(searchParams).forEach((key) =>
-    fetchUrl.searchParams.append(key, searchParams[key])
-  );
+    let fetchUrl = new URL(GOOGLE_CUSTOM_SEARCH_API_URL);
+    Object.keys(searchParams).forEach((key) =>
+      fetchUrl.searchParams.append(key, searchParams[key])
+    );
 
-  const fetched = await fetch(fetchUrl.toString());
-  const data = await fetched.json();
+    const fetched = await fetch(fetchUrl.toString());
+    const data = await fetched.json();
 
-  return res.json(data);
+    return res.json(data);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
 });
 
 // @route   GET api/search/today
