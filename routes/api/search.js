@@ -7,7 +7,7 @@ const GOOGLE_CUSTOM_SEARCH_API_URL =
   'https://www.googleapis.com/customsearch/v1?';
 const GOOGLE_CUSTOM_SEARCH_API_KEY = 'AIzaSyB09RX3f33e5qFL0tjjptIXLlI2VOjv_Lc';
 const CUSTOM_SEARCH_ENGINE_ID = '012399205167094491174:bylu6wpfbyk';
-const OPENFEMA_API_URL = '/api/open';
+const OPENFEMA_API_URL = '/api/open/v2/DisasterDeclarationsSummaries';
 
 const searchParams = {
   key: GOOGLE_CUSTOM_SEARCH_API_KEY,
