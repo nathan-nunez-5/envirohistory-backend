@@ -46,23 +46,28 @@ router.post('/', async (req, res) => {
 // @desc    Get data associated with today's date
 // @access  Public
 router.get('/today', async (req, res) => {
-  var d = new Date();
+  try {
+    var d = new Date();
 
-  dateString =
-    ('0' + (d.getMonth() + 1)).slice(-2) +
-    ('0' + d.getDate()).slice(-2);
+    dateString =
+      ('0' + (d.getMonth() + 1)).slice(-2) +
+      ('0' + d.getDate()).slice(-2);
 
-  FEMAParams[filter] = "endswith(declarationDate,'" + dateString + "')";
+    FEMAParams['filter'] = "endswith(declarationDate,'" + dateString + "')";
 
-  let fetchUrl = new URL(OPENFEMA_API_URL);
-  Object.keys(FEMAParams).forEach((key) =>
-    fetchUrl.searchParams.append(key, FEMAParams[key])
-  );
+    let fetchUrl = new URL(OPENFEMA_API_URL);
+    Object.keys(FEMAParams).forEach((key) =>
+      fetchUrl.searchParams.append(key, FEMAParams[key])
+    );
 
-  const fetched = await fetch(fetchUrl.toString());
-  const data = await fetched.json();
+    const fetched = await fetch(fetchUrl.toString());
+    const data = await fetched.json();
 
-  return res.json(data);
+    return res.json(data);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
 });
 
 module.exports = router;
