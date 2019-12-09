@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const URL = require('url').URL;
+const fetch = require('node-fetch');
 
 const GOOGLE_CUSTOM_SEARCH_API_URL =
   'https://www.googleapis.com/customsearch/v1?';
@@ -22,11 +24,8 @@ const FEMAParams = {
 // @desc    Create a search
 // @access  Public
 router.post('/', async (req, res) => {
-  console.log('Submitting Search...');
-
   try {
-    searchParams['q'] = req.body.q;
-
+    searchParams['q'] = req.body.searchQuery;
     let fetchUrl = new URL(GOOGLE_CUSTOM_SEARCH_API_URL);
     Object.keys(searchParams).forEach((key) =>
       fetchUrl.searchParams.append(key, searchParams[key])
@@ -35,6 +34,7 @@ router.post('/', async (req, res) => {
     const fetched = await fetch(fetchUrl.toString());
     const data = await fetched.json();
 
+    console.log(data);
     return res.json(data);
   } catch (err) {
     console.error(err.message);
