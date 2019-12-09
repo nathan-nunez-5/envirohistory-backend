@@ -53,7 +53,7 @@ router.get('/today', async (req, res) => {
       ('0' + (d.getMonth() + 1)).slice(-2) + '-' +
       ('0' + d.getDate()).slice(-2);
 
-    FEMAParams['filter'] = "substringof('" + dateString + "', declarationDate)";
+    FEMAParams['filter'] = "substringof('" + dateString + "',declarationDate)";
 
     let fetchUrl = new URL(OPENFEMA_API_URL);
     Object.keys(FEMAParams).forEach((key) =>
