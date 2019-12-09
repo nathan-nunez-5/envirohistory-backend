@@ -49,8 +49,8 @@ router.get('/today', async (req, res) => {
   var d = new Date();
 
   dateString =
-    ('0' + (MyDate.getMonth() + 1)).slice(-2) +
-    ('0' + MyDate.getDate()).slice(-2);
+    ('0' + (d.getMonth() + 1)).slice(-2) +
+    ('0' + d.getDate()).slice(-2);
 
   FEMAParams[filter] = "endswith(declarationDate,'" + dateString + "')";
 
