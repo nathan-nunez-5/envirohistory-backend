@@ -1,0 +1,12 @@
+{
+  "folders": [
+	{
+		"name": "SSH FS - zoo",
+		"uri": "ssh://zoo/"
+	},
+	{
+		"name": "SSH FS - cs323",
+		"uri": "ssh://cs323/"
+	}
+]
+}
