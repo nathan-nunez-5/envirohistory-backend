@@ -40,13 +40,19 @@ const Search = ({ results }) => {
         <hr></hr>
 
         {/* Spatial Coverage */}
-        <MyMapComponent
+        {/* <MyMapComponent
           id="map-one"
           isMarkerShown={true}
           onMarkerClick={false}
-        />
-
+        /> */}
+        <img
+          id="map-img"
+          src="https://images.photowall.com/products/58350/new-york-map-bw.jpg"
+          alt="map"
+        ></img>
         <br></br>
+        <br></br>
+
         <Selector title="Spatial Coverage" optionNames={spatialCoverages} />
         <hr></hr>
       </div>
