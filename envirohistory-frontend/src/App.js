@@ -23,7 +23,7 @@ function App() {
         <div>
           <Navbar />
           <div id="main">
-            <Route path="/" exact component={Landing} />
+            <Route path="/" exact component={Dashboard} />
             <Switch>
               <Route path="/dashboard" exact component={Dashboard} />
               <Route path="/search" exact component={Search} />

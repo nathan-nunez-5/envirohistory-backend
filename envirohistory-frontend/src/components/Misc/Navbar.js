@@ -2,7 +2,7 @@ import React from 'react';
 
 const NavBar = () => {
   return (
-    <nav class="navbar navbar-light bg-light">
+    <nav className="navbar navbar-light bg-light">
       <a className="navbar-brand" href="/dashboard">
         E
       </a>

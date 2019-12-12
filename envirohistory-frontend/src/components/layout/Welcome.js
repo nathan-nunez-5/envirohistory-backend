@@ -81,6 +81,7 @@ const Welcome = ({ getTodaysInfo, results }) => {
       console.log('Images: ', imagesDict[0][item.incidentType]);
       events.push(
         <TodayEvent
+          key={i}
           backgroundImage={
             imagesDict[0][item.incidentType] !== undefined
               ? imagesDict[0][item.incidentType].img

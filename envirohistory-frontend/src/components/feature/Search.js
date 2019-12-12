@@ -8,7 +8,17 @@ import { connect } from 'react-redux';
 
 const Search = ({ results }) => {
   let variables = ['Fire', 'Hurricane', 'Landslide', 'Tornado', 'Flood'];
-  let spatialCoverages = ['America', 'Japan', 'Indonesia'];
+  let spatialCoverages = [
+    'America',
+    'Indonesia',
+    'Australia',
+    'Canada',
+    'Germany',
+    'Hong Kong',
+    'India',
+    'Japan',
+    'Nigeria'
+  ];
 
   let Cards = [];
 

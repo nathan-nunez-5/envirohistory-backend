@@ -24,20 +24,14 @@ app.use(function(req, res, next) {
 // Routes
 app.use('/api/search', require('./routes/api/search'));
 
-app.get('*', (req, res) => {
-  res.sendFile(
-    path.join(__dirname + '/envirohistory-frontend/build/index.html')
-  );
-});
-
-// if (process.env.NODE_ENV == 'production') {
-//   app.get('*', (req, res) => {
-//     console.log('in here..');
-//     res.sendFile(
-//       path.resolve(__dirname, 'envirohistory-frontend', 'build', 'index.html')
-//     );
-//   });
-// }
+if (process.env.NODE_ENV == 'production') {
+  console.log('In production mode...\n');
+  app.get('*', (req, res) => {
+    res.sendFile(
+      path.join(__dirname + '/envirohistory-frontend/build/index.html')
+    );
+  });
+}
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
