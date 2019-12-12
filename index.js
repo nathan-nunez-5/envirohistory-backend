@@ -4,11 +4,11 @@ const path = require('path');
 
 const app = express();
 
-// Initialize Middleware
-app.use(express.json({ extended: false }));
-
 // Enable CORS
 app.use(cors({}));
+
+// Initialize Middleware
+app.use(express.json({ extended: false }));
 
 app.use(express.static('envirohistory-frontend/build'));
 

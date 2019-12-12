@@ -10,11 +10,7 @@ export const submitSearch = (formData) => async (dispatch) => {
 
   try {
     console.log('Data:', formData);
-    const res = await axios.post(
-      'http://localhost:8000/api/search',
-      formData,
-      config
-    );
+    const res = await axios.post('/api/search', formData, config);
 
     dispatch({
       type: SEARCH_SUCCESS,
@@ -30,7 +26,7 @@ export const submitSearch = (formData) => async (dispatch) => {
 
 export const getTodaysInfo = (formData) => async (dispatch) => {
   try {
-    const res = await axios.get('http://localhost:8000/api/search/today');
+    const res = await axios.get('/api/search/today');
     console.log('res: ', res);
 
     dispatch({
